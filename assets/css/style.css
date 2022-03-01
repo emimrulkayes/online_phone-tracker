@@ -2,3 +2,34 @@
 body {
     font-family: 'Poppins', sans-serif;
 }
+
+.input-group {
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+}
+
+.input-group .btn {
+    outline: none;
+    box-shadow: none;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    transition: all 0.5s ease-in-out;
+}
+
+.input-group .btn:hover {}
+
+.input-group .btn:focus {
+    outline: none;
+    box-shadow: none;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.input-group .form-control {
+    outline: none;
+    box-shadow: none;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.input-group .form-control:focus {
+    outline: none;
+    box-shadow: none;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+}

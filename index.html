@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Phone Hunter</title>
+    <title>Online phone tracker</title>
     <!-- css link bootstrap -->
     <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
     <!-- custom style css -->
@@ -15,15 +15,47 @@
 <body>
     <!-- header part start  -->
     <header class="">
-        <h1 class="header-text text-center mt-4 fw-bold text-muted"> Hello search your phone here.. </span>
+        <h1 class="header-text text-center mt-4 fw-bold text-muted"> Online Phone Tracker </span>
         </h1>
     </header>
     <!-- header part end -->
+    <main>
+        <section class="mt-5">
+            <div class="container">
+                <div class="w-50 m-auto">
+                    <div class="input-group mb-3">
+                        <input id="search-box" type="text" class="form-control" placeholder="Search phone" aria-label="Recipient's username" aria-describedby="button-addon2">
+                        <button onclick="allPhones()" class="btn btn-outline-secondary" type="button" id="button-search">Search</button>
+                    </div>
+                </div>
+                <div class="row mt-5">
+                    <div class="col-4 text-center">
+                        <ul id="phones">
+
+                        </ul>
+                        <button type=""> Get Phone</button>
+                    </div>
+                    <div class="col-4 text-center">
+                        <ul id="phones">
+
+                        </ul>
+                        <button type=""> Get Phone</button>
+                    </div>
+                    <div class="col-4 text-center">
+                        <ul id="phones">
+
+                        </ul>
+                        <button type=""> Get Phone</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
 
-    <!-- js of bootstrap -->
+    <!-- Bootstrap Script -->
     <script src="./assets/js/bootstrap.min.js"></script>
-    <!-- custom js  -->
+    <!-- Add Custom script -->
     <script src="./assets/js/app.js"></script>
 </body>
 
