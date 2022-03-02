@@ -1,22 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
 body {
     font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    position: relative;
 }
 
 .input-group {
     box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
 }
 
-.input-group .btn {
+.input-group .search-btn {
     outline: none;
     box-shadow: none;
     border: 1px solid rgba(0, 0, 0, 0.3);
     transition: all 0.5s ease-in-out;
 }
 
-.input-group .btn:hover {}
+.input-group .search-btn:hover {
+    color: #0dcaf0;
+}
 
-.input-group .btn:focus {
+.input-group .search-btn:focus {
     outline: none;
     box-shadow: none;
     border: 1px solid rgba(0, 0, 0, 0.3);
@@ -32,4 +36,67 @@ body {
     outline: none;
     box-shadow: none;
     border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.font-16 {
+    font-size: 16px;
+}
+
+.card {
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    border: none;
+    background: transparent;
+    padding: 15px 10px;
+    border-radius: 15px;
+}
+
+.card-title {
+    font-size: 18px;
+}
+
+.card-title a {
+    text-decoration: none;
+}
+
+.card-title i {
+    font-size: 14px;
+}
+
+.card-footer {
+    border: none;
+    background: transparent;
+}
+
+.card-btn {
+    background: #0dcaf0;
+    border: none;
+}
+
+.card-btn:focus {
+    box-shadow: none;
+    outline: none;
+    border: none;
+}
+
+.search-container {
+    width: 100%;
+}
+
+#spinner {
+    z-index: 999 !important;
+}
+
+#product-details-container div {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media only screen and (min-width: 768px) {
+    .search-container {
+        width: 35%;
+    }
+    #details-img {
+        width: 50% !important;
+    }
 }

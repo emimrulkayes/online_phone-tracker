@@ -2,60 +2,65 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Online phone tracker</title>
-    <!-- css link bootstrap -->
-    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
-    <!-- custom style css -->
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+    <!-- Local CSS -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
 
 <body>
-    <!-- header part start  -->
-    <header class="">
-        <h1 class="header-text text-center mt-4 fw-bold text-muted"> Online Phone Tracker </span>
-        </h1>
+    <header>
+        <!-- header area start  -->
+        <h1 class="header-text text-center mt-4 fw-bold text-muted"> Online Phone <span class="text-info">Tracker</span> </h1>
+        <!-- header part end -->
+
+        <!-- Add Spinner -->
+        <div id="spinner" style="display: none" class="vh-100 position-absolute top-50 start-50">
+            <div class="spinner-border text-info" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
     </header>
-    <!-- header part end -->
+    <!-- Header section ends -->
+
+    <!-- Main content area -->
     <main>
-        <section class="mt-5">
-            <div class="container">
-                <div class="w-50 m-auto">
-                    <div class="input-group mb-3">
-                        <input id="search-box" type="text" class="form-control" placeholder="Search phone" aria-label="Recipient's username" aria-describedby="button-addon2">
-                        <button onclick="allPhones()" class="btn btn-outline-secondary" type="button" id="button-search">Search</button>
-                    </div>
-                </div>
-                <div class="row mt-5">
-                    <div class="col-4 text-center">
-                        <ul id="phones">
-
-                        </ul>
-                        <button type=""> Get Phone</button>
-                    </div>
-                    <div class="col-4 text-center">
-                        <ul id="phones">
-
-                        </ul>
-                        <button type=""> Get Phone</button>
-                    </div>
-                    <div class="col-4 text-center">
-                        <ul id="phones">
-
-                        </ul>
-                        <button type=""> Get Phone</button>
-                    </div>
-                </div>
+        <!-- Search Input Area -->
+        <section class="container search-container mx-auto">
+            <div class="input-group mb-5 mt-4 mx-auto">
+                <input type="text" id="search-input" class="form-control" placeholder="Search phone" aria-label="Phone's Names" aria-describedby="search-button">
+                <button class="search-btn input-group-text" id="search-btn">Search</button>
             </div>
         </section>
+        <!-- Search Input area end -->
+
+        <!-- products Field Area -->
+        <section id="all-products" class="container">
+            <!-- Product details -->
+            <section id="product-details-container" class="my-5 mx-auto"></section>
+            <!-- Product details end -->
+
+            <div id="products-display" class="row row-cols-1 row-cols-md-3 g-4">
+                <!-- All products comes here -->
+            </div>
+        </section>
+        <!-- products Field Area end -->
     </main>
+    <!-- Main content area end -->
 
+    <!-- Footer area start -->
+    <footer>
+        <p class="text-center text-muted">
+            Copyright&copy;2022 Assignment_06 | emimrulkayes
+        </p>
+    </footer>
+    <!-- Footer area end -->
 
-    <!-- Bootstrap Script -->
-    <script src="./assets/js/bootstrap.min.js"></script>
-    <!-- Add Custom script -->
+    <!-- Local Scripts -->
     <script src="./assets/js/app.js"></script>
 </body>
 
