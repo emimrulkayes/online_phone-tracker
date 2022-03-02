@@ -5,12 +5,11 @@ const productsDisplay = document.getElementById("products-display");
 const productDetailsContainer = document.getElementById(
     "product-details-container"
 );
-const searchText = searchInput.value;
-searchInput.value = '';
+
 
 let allPhones = [];
 // Search Listener
-searchBtn.addEventListener("click", (e) => {
+searchBtn.addEventListener("click", () => {
     try {
         displayPhones(searchInput.value.toLowerCase());
     } catch (error) {
@@ -38,7 +37,7 @@ async function displayProductDetails(id) {
       <h4 class="text-dark mb-4 text-start">Product Details</h4>
       <img id="details-img" src="${phone.image}" class="w-75 h-100" alt"Products" />
       <div class="card-body text-start ms-4 pt-5">
-        <h3 class="card-title">${phone.name}</h3>
+        <h3 class="card-title">Product Name:<span class="text-info"> ${phone.name}</span> <i class="bi bi-star"></i></h3>
         <h6 class="card-title">Brand: <span class="text-muted">${phone.brand}</span></h6>
         <h6 class="card-title">Release Date: <span class="text-muted">${phone.releaseDate ? phone.releaseDate : "Not found"
         }</span>
@@ -52,11 +51,14 @@ async function displayProductDetails(id) {
 }
 
 // utility functions
-async function getData(searchText, allData) {
+async function getData(arg, allData) {
     let phones = allData ? [] : {};
+    const searchText = searchInput.value;
+    searchInput.value = "";
     const apiLink = allData ?
+
         `https://openapi.programming-hero.com/api/phones?search=${searchText}` :
-        `https://openapi.programming-hero.com/api/phone/${searchText}`;
+        `https://openapi.programming-hero.com/api/phone/${arg}`;
     try {
         showSpinner(true);
         const res = await fetch(apiLink);
@@ -111,7 +113,7 @@ function renderShowMoreBtn() {
         "beforeend",
         `
             <div class="text-center my-3"> 
-            <button id="show-more" type="button" class="btn btn-warning">Show More</button>
+            <button id="show-more" type="button" class="btn btn-success">Show More</button>
             </div>
         `
     );
