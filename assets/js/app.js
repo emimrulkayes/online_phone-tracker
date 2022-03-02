@@ -6,7 +6,6 @@ const productDetailsContainer = document.getElementById(
     "product-details-container"
 );
 
-
 let allPhones = [];
 // Search Listener
 searchBtn.addEventListener("click", () => {
@@ -33,21 +32,18 @@ async function displayProductDetails(id) {
     productDetailsContainer.textContent = "";
     let phone = await getData(id, false);
     productDetailsContainer.innerHTML = `
-    <div class="card-details text-center py-4 px-5">
-      <h4 class="text-dark mb-4 text-start">Product Details</h4>
-      <img id="details-img" src="${phone.image}" class="w-75 h-100" alt"Products" />
-      <div class="card-body text-start ms-4 pt-5">
-        <h3 class="card-title">Product Name:<span class="text-info"> ${phone.name}</span> <i class="bi bi-star text-warning"></i></h3>
-        <h6 class="card-title">Brand: <span class="text-muted">${phone.brand}</span></h6>
-        <h6 class="card-title">Release Date: <span class="text-muted">${phone.releaseDate ? phone.releaseDate : "Not found"
-        }</span>
-        </h6>
-        <div>
-        ${displayFeatures(phone.mainFeatures, "Main Features")}
+        <div class="card-details text-center py-4 px-5">
+            <h4 class="text-dark mb-4 text-start">Product Details</h4>
+            <img id="details-img" src="${phone.image}" class="w-75 h-100" alt"Products" />
+            <div class="card-body text-start ms-4 pt-5">
+                <h3 class="card-title">Product Name:<span class="text-info"> ${phone.name}</span> <i class="bi bi-star text-warning"></i></h3>
+                <h6 class="card-title">Brand: <span class="text-muted">${phone.brand}</span></h6>
+                <h6 class="card-title">Release Date: <span class="text-muted">${phone.releaseDate ? phone.releaseDate : "Not found"}</span></h6>
+                <div> ${displayFeatures(phone.mainFeatures, "Main Features")} </div>
+                <div> ${displayFeatures(phone.others, "Other Connectivity")} </div>
+            </div>
         </div>
-        <div>${displayFeatures(phone.others, "Other Connectivity")}</div>
-      </div>
-    </div>`;
+    `;
 }
 
 // utility functions
@@ -56,7 +52,6 @@ async function getData(arg, allData) {
     const searchText = searchInput.value;
     searchInput.value = "";
     const apiLink = allData ?
-
         `https://openapi.programming-hero.com/api/phones?search=${searchText}` :
         `https://openapi.programming-hero.com/api/phone/${arg}`;
     try {
@@ -78,9 +73,9 @@ function displayFeatures(features, title) {
     for (let [key, value] of Object.entries(features)) {
         if (key == "sensors") value = value.join(", ");
         string += `
-        <h6 class="card-title">${key}: <span class="text-muted">${value}</span></h6>
-        <hr>
-    `;
+            <h6 class="card-title">${key}: <span class="text-muted">${value}</span></h6>
+            <hr>
+        `;
     }
     return string;
 }
@@ -138,7 +133,10 @@ function clearDisplay() {
 }
 
 function nothingFound() {
-    productDetailsContainer.innerHTML = `<h5 class="text-danger text-center"><strong>No Results</strong> <br> <br> Please search: <cite class="text-info">Apple - Samsung - Huawei - Oppo </cite> etc...</h5>`;
+    productDetailsContainer.innerHTML = `
+        <h5 class="text-danger text-center"><strong>No Results</strong></h5> <br> <br>
+        <p class="text-center"> Please search: <cite class="text-info">'Apple' - 'Samsung' - 'Huawei' - 'Oppo' </cite> etc...</p>
+    `;
 }
 
 // show spinner
