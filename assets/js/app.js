@@ -33,7 +33,7 @@ async function displayProductDetails(id) {
     productDetailsContainer.textContent = "";
     let phone = await getData(id, false);
     productDetailsContainer.innerHTML = `
-    <div class="text-center shadow shadow-lg rounded-5 py-4 px-5">
+    <div class="card-details text-center py-4 px-5">
       <h4 class="text-dark mb-4 text-start">Product Details</h4>
       <img id="details-img" src="${phone.image}" class="w-75 h-100" alt"Products" />
       <div class="card-body text-start ms-4 pt-5">
