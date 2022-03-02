@@ -37,7 +37,7 @@ async function displayProductDetails(id) {
       <h4 class="text-dark mb-4 text-start">Product Details</h4>
       <img id="details-img" src="${phone.image}" class="w-75 h-100" alt"Products" />
       <div class="card-body text-start ms-4 pt-5">
-        <h3 class="card-title">Product Name:<span class="text-info"> ${phone.name}</span> <i class="bi bi-star"></i></h3>
+        <h3 class="card-title">Product Name:<span class="text-info"> ${phone.name}</span> <i class="bi bi-star text-warning"></i></h3>
         <h6 class="card-title">Brand: <span class="text-muted">${phone.brand}</span></h6>
         <h6 class="card-title">Release Date: <span class="text-muted">${phone.releaseDate ? phone.releaseDate : "Not found"
         }</span>
@@ -94,12 +94,12 @@ function renderCards(phones) {
                 <div class="card pt-3 text-start">
                     <img src="${phone.image}" class="card-img-top w-75 h-100 mx-auto" alt="Product" />
                     <div class="card-body">
-                        <h5 class="card-title"><strong>Model</strong>: <a href="#">${phone.phone_name}</a> <i class="bi bi-star"></i> </h5>
+                        <h5 class="card-title"><strong>Model</strong>: <a href="#">${phone.phone_name}</a> <i class="bi bi-star text-warning"></i> </h5>
                         <span class="card-title"><strong>Brand</strong>: ${phone.brand}</span>
                     </div>
 
                     <div class="card-footer">
-                        <a href="#" onclick="displayProductDetails('${phone.slug}')" class="btn btn-primary">View details</a>
+                        <a href="#" onclick="displayProductDetails('${phone.slug}')" class="btn btn-primary card-btn">View details</a>
                     </div>
                 </div>
             </div>`
